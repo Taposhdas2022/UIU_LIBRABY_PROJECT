@@ -24,7 +24,7 @@ const Login =(props) =>{
           
           <StatusBar style="auto" />
           
-          <Text style={{ fontSize: 50 , color : "#FFA500"}}>UIU LIBRARY</Text>
+          <Text style={{ fontSize: 40 , color : "#FFA500"}}>UIU LIBRARY </Text>
           <View style={styles.inputView}>
            
             <TextInput
