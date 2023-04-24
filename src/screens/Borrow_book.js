@@ -12,40 +12,19 @@ import {
 
 
 
-const Home=(props) =>{
+const Borrow_book=(props) =>{
 
 
- 
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     
     return (
         <View style={styles.container}>
           
           <StatusBar style="auto" />
           
-          <Text style={{ fontSize: 50 , color : "#FFA500"}}>UIU LIBRARY</Text>
-        
-    
-
-
-          <TouchableOpacity style={styles.loginBtn} onPress={() => {
-            props.navigation.navigate("Book_list");}}>
-            <Text style={styles.loginText}>BOOK LIST</Text> 
-            </TouchableOpacity>  
-            
-            <TouchableOpacity style={styles.loginBtn} onPress={() => {
-            props.navigation.navigate("Search_book");}}>
-            <Text style={styles.loginText}>SEARCH BOOK</Text> 
-            </TouchableOpacity> 
-
-            <TouchableOpacity style={styles.loginBtn} onPress={() => {
-            props.navigation.navigate("Borrow_book");}}>
-            <Text style={styles.loginText}>BORROW BOOK LIST</Text> 
-            </TouchableOpacity> 
-
-            <TouchableOpacity style={styles.loginBtn} onPress={() => {
-            props.navigation.navigate("Login");}}>
-            <Text style={styles.loginText}>LOGOUT</Text> 
-            </TouchableOpacity> 
+          <Text style={{ fontSize: 40 }}>Borrow Book</Text>
+     
           
 
 
@@ -100,7 +79,7 @@ const styles = StyleSheet.create({
     },
   });
 
-  export default Home;
+  export default Borrow_book;
 
   
   
