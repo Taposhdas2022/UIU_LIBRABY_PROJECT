@@ -12,45 +12,42 @@ import {
 
 
 
-const Home=(props) =>{
+const Index =(props) =>{
 
 
- 
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     
     return (
         <View style={styles.container}>
           
           <StatusBar style="auto" />
           
-          <Text style={{ fontSize: 50 , color : "#FFA500"}}>UIU LIBRARY</Text>
+          <Text style={{ fontSize: 40 }}>Welcome uiu Library</Text>
         
-    
-
-
+          
+          
           <TouchableOpacity style={styles.loginBtn} onPress={() => {
-            props.navigation.navigate("Book_list");}}>
-            <Text style={styles.loginText}>BOOK LIST</Text> 
-            </TouchableOpacity>  
+            props.navigation.navigate("Login");}}>
+            <Text style={styles.loginText}>Student Login</Text> 
+            </TouchableOpacity>
+
+
             
             <TouchableOpacity style={styles.loginBtn} onPress={() => {
-            props.navigation.navigate("Search_book");}}>
-            <Text style={styles.loginText}>SEARCH BOOK</Text> 
-            </TouchableOpacity> 
+            props.navigation.navigate("Admin_login");}}>
+            <Text style={styles.loginText}>Admin Login</Text> 
+            </TouchableOpacity>
+            
+            
 
-            <TouchableOpacity style={styles.loginBtn} onPress={() => {
-            props.navigation.navigate("Borrow_book");}}>
-            <Text style={styles.loginText}>BORROW BOOK LIST</Text> 
-            </TouchableOpacity> 
-
-            <TouchableOpacity style={styles.loginBtn} onPress={() => {
-            props.navigation.navigate("Login");}}>
-            <Text style={styles.loginText}>LOGOUT</Text> 
-            </TouchableOpacity> 
+           
           
 
 
 
         </View> 
+        
       );
     }
 
@@ -65,7 +62,7 @@ const styles = StyleSheet.create({
       justifyContent: "center",
     },
     image: {
-      marginBottom: 50,
+      marginBottom: 40,
     },
     inputView: {
       backgroundColor: "#93CCED",
@@ -100,7 +97,7 @@ const styles = StyleSheet.create({
     },
   });
 
-  export default Home;
+  export default Index;
 
   
   

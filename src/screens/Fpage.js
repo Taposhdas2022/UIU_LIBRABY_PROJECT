@@ -12,7 +12,7 @@ import {
 
 
 
-const Home=(props) =>{
+const Fpage=(props) =>{
 
 
  
@@ -28,25 +28,16 @@ const Home=(props) =>{
 
 
           <TouchableOpacity style={styles.loginBtn} onPress={() => {
-            props.navigation.navigate("Book_list");}}>
-            <Text style={styles.loginText}>BOOK LIST</Text> 
+            props.navigation.navigate("Login");}}>
+            <Text style={styles.loginText}>Student Login</Text> 
             </TouchableOpacity>  
             
             <TouchableOpacity style={styles.loginBtn} onPress={() => {
-            props.navigation.navigate("Search_book");}}>
-            <Text style={styles.loginText}>SEARCH BOOK</Text> 
+            props.navigation.navigate("Admin_login");}}>
+            <Text style={styles.loginText}>Admin login</Text> 
             </TouchableOpacity> 
 
-            <TouchableOpacity style={styles.loginBtn} onPress={() => {
-            props.navigation.navigate("Borrow_book");}}>
-            <Text style={styles.loginText}>BORROW BOOK LIST</Text> 
-            </TouchableOpacity> 
-
-            <TouchableOpacity style={styles.loginBtn} onPress={() => {
-            props.navigation.navigate("Login");}}>
-            <Text style={styles.loginText}>LOGOUT</Text> 
-            </TouchableOpacity> 
-          
+           
 
 
 
@@ -100,7 +91,7 @@ const styles = StyleSheet.create({
     },
   });
 
-  export default Home;
+  export default Fpage;
 
   
   

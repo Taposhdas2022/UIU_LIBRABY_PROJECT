@@ -14,7 +14,7 @@ import {
 
 
 
-const Login =(props) =>{
+const Admin_login =(props) =>{
 
 
     const [email, setEmail] = useState("");
@@ -28,8 +28,8 @@ const Login =(props) =>{
 
           
           <StatusBar style="auto" />
-          <Text style={{ fontSize: 60 , color : "#FFA500"}}>UIU LIBRARY </Text>
-          <Text style={{ fontSize: 30 , color : "#FF5733"}}>Student Login</Text>
+          <Text style={{ fontSize: 60 , color : "#FFA500"}}>Admin Login</Text>
+          
 
 
 
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     },
   });
 
-  export default Login;
+  export default Admin_login;
 
   
   
