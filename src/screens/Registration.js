@@ -15,7 +15,8 @@ const Registration =(props) =>{
   const [password, setPassword] = useState("");
   return (
     <View style={styles.container}>
-        <Text style={{ fontSize: 40 }}>Registration Form</Text>
+                <Text style={{ fontSize: 50 , color : "#FF5733"}}>Student</Text>
+                <Text style={{ fontSize: 50 ,color : "#FF5733"}}>Registration Form</Text>
       
       <StatusBar style="auto" />
       
