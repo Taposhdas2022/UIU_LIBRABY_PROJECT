@@ -21,6 +21,13 @@ const Home=(props) =>{
         <View style={styles.container}>
           
           <StatusBar style="auto" />
+          <Image
+            style={{
+            resizeMode: 'cover',
+            height: 200,
+            width: 200,
+          }}
+          source={require('../../assets/uiu.png')}/>
           
           <Text style={{ fontSize: 50 , color : "#FFA500"}}>UIU LIBRARY</Text>
         

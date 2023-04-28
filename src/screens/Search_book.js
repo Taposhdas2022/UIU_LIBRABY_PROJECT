@@ -8,6 +8,7 @@ import {
   TextInput,
   Button,
   TouchableOpacity,
+  ImageBackground
 } from "react-native";
 
 
@@ -20,16 +21,19 @@ const Search_book=(props) =>{
     
     return (
         <View style={styles.container}>
-          
           <StatusBar style="auto" />
           
-          <Text style={{ fontSize: 40 }}>Search_book</Text>
-     
+          <ImageBackground source={require('../../assets/uiu.png')} resizeMode="cover" style={styles.image}>
           
-
-
-
+        </ImageBackground>
+        
+          
+          
+          
+          <Text style={{ fontSize: 40 }}>Search_book</Text>
         </View> 
+
+        
       );
     }
 

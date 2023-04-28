@@ -22,14 +22,17 @@ const Login =(props) =>{
     
     return (
         <View style={styles.container}>
-
-          
-
-
-          
           <StatusBar style="auto" />
-          <Text style={{ fontSize: 60 , color : "#FFA500"}}>UIU LIBRARY </Text>
-          <Text style={{ fontSize: 30 , color : "#FF5733"}}>Student Login</Text>
+
+          <Image
+            style={{
+            resizeMode: 'cover',
+            height: 200,
+            width: 200,
+          }}
+          source={require('../../assets/uiu.png')}/>
+          <Text style={{ fontSize: 50, color : "#FFA500"}}>Student Login </Text>
+          
 
 
 

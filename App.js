@@ -11,6 +11,11 @@ import Book_list from "./src/screens/Book_list";
 import Borrow_book from "./src/screens/Borrow_book";
 import Fpage from "./src/screens/Fpage";
 import Admin_login from "./src/screens/Admin_login";
+import Admin_registration from "./src/screens/Admin_registration";
+import Admin_home from "./src/screens/Admin_home";
+import Add_book from "./src/screens/Add_book";
+import Delete_book from "./src/screens/Delete_book";
+import Library_student from "./src/screens/Library_student";
 
 
 
@@ -33,7 +38,20 @@ function App() {
         <stack.Screen name="Search_book" component={Search_book}/>
         <stack.Screen name="Book_list" component={Book_list}/>
         <stack.Screen name="Borrow_book" component={Borrow_book}/>
-        <stack.Screen name ="Admin_login" component={Admin_login}/>
+        <stack.Screen name ="Admin_login" component={Admin_login}/>        
+        <stack.Screen name ="Admin_registration" component={Admin_registration}/>
+        <stack.Screen name ="Admin_home" component={Admin_home}/>
+        <stack.Screen name ="Add_book" component={Add_book}/>
+        <stack.Screen name ="Delete_book" component={Delete_book}/>
+        <stack.Screen name ="Library_student" component={Library_student}/>
+
+
+
+
+
+        
+
+        
 
 
         
