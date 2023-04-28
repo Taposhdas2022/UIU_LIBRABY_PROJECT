@@ -8,32 +8,27 @@ import {
   TextInput,
   Button,
   TouchableOpacity,
-  ImageBackground
 } from "react-native";
 
 
 
-const Search_book=(props) =>{
+const Library_student=(props) =>{
 
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+   
     
     return (
         <View style={styles.container}>
+          
           <StatusBar style="auto" />
           
-          <ImageBackground source={require('../../assets/uiu.png')} resizeMode="cover" style={styles.image}>
+          <Text style={{ fontSize: 40 }}> LIBRARY STUDENT</Text>
+     
           
-        </ImageBackground>
-        
-          
-          
-          
-          <Text style={{ fontSize: 40 }}>Search_book</Text>
-        </View> 
 
-        
+
+
+        </View> 
       );
     }
 
@@ -83,7 +78,7 @@ const styles = StyleSheet.create({
     },
   });
 
-  export default Search_book;
+  export default Library_student;
 
   
   

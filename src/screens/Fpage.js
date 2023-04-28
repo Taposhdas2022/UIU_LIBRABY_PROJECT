@@ -8,6 +8,7 @@ import {
   TextInput,
   Button,
   TouchableOpacity,
+  fontSize
 } from "react-native";
 
 
@@ -19,10 +20,20 @@ const Fpage=(props) =>{
     
     return (
         <View style={styles.container}>
-          
-          <StatusBar style="auto" />
+          <StatusBar style="auto" />       
+            <Image
+            style={{
+            resizeMode: 'cover',
+            height: 250,
+            width: 250,
+          }}
+          source={require('../../assets/uiu.png')}/>
+
+
+
           
           <Text style={{ fontSize: 50 , color : "#FFA500"}}>UIU LIBRARY</Text>
+
         
     
 
@@ -51,7 +62,7 @@ const Fpage=(props) =>{
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#fff",
+      backgroundColor: "#F2F3F4",
       alignItems: "center",
       justifyContent: "center",
     },

@@ -22,13 +22,16 @@ const Admin_login =(props) =>{
     
     return (
         <View style={styles.container}>
-
-          
-
-
-          
           <StatusBar style="auto" />
-          <Text style={{ fontSize: 60 , color : "#FFA500"}}>Admin Login</Text>
+
+          <Image
+            style={{
+            resizeMode: 'cover',
+            height: 200,
+            width: 200,
+          }}
+          source={require('../../assets/uiu.png')}/>
+          <Text style={{ fontSize: 50 , color : "#FFA500"}}>Admin Login</Text>
           
 
 
@@ -61,14 +64,14 @@ const Admin_login =(props) =>{
             </TouchableOpacity> 
 
           <TouchableOpacity style={styles.loginBtn } onPress={() => {
-            props.navigation.navigate("Home");}}>
+            props.navigation.navigate("Admin_home");}}>
             <Text style={styles.loginText}>LOGIN</Text> 
             </TouchableOpacity> 
           
           <View>
             <TouchableOpacity>
             <Text style={styles.forgot_button} onPress={() => {
-            props.navigation.navigate("Registration");}}
+            props.navigation.navigate("Admin_registration");}}
             >Create An Account</Text> 
           </TouchableOpacity>
 
