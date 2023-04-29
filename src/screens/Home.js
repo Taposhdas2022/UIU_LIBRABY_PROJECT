@@ -67,7 +67,7 @@ const Home=(props) =>{
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#fff",
+      backgroundColor: "#F2F3F4",
       alignItems: "center",
       justifyContent: "center",
     },

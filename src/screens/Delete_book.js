@@ -23,6 +23,26 @@ const Delete_book=(props) =>{
           <StatusBar style="auto" />
           
           <Text style={{ fontSize: 40 }}>DELETE BOOK</Text>
+          <View style={styles.inputView}><TextInput
+          style={styles.TextInput}
+          placeholder="Enter Book Name "
+          placeholderTextColor="#003f5c"
+          onChangeText={(email) => setEmail(email)}
+          /> 
+          </View>
+
+          <View style={styles.inputView}>
+          <TextInput
+          style={styles.TextInput}
+          placeholder="Enter Department Name"
+          placeholderTextColor="#003f5c"
+          onChangeText={(email) => setEmail(email)}
+          /> 
+          </View>  
+          <TouchableOpacity style={styles.loginBtn } onPress={() => {
+          props.navigation.navigate("");}}>
+          <Text style={styles.loginText}>DELETE</Text> 
+          </TouchableOpacity> 
      
           
 
@@ -38,7 +58,7 @@ const Delete_book=(props) =>{
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#fff",
+      backgroundColor: "#F2F3F4",
       alignItems: "center",
       justifyContent: "center",
     },
