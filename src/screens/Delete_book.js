@@ -14,6 +14,11 @@ import {
 
 const Delete_book=(props) =>{
 
+  const[ fdata, setFdata] = useState({
+    bookName:'',
+    departmentName:'',
+  
+  })
 
    
     
@@ -27,7 +32,7 @@ const Delete_book=(props) =>{
           style={styles.TextInput}
           placeholder="Enter Book Name "
           placeholderTextColor="#003f5c"
-          onChangeText={(email) => setEmail(email)}
+          onChangeText={(text) => setFdata ({ ...fdata, bookName: text})}
           /> 
           </View>
 
@@ -36,11 +41,11 @@ const Delete_book=(props) =>{
           style={styles.TextInput}
           placeholder="Enter Department Name"
           placeholderTextColor="#003f5c"
-          onChangeText={(email) => setEmail(email)}
+          onChangeText={(text) => setFdata ({ ...fdata, departmentName: text})}
           /> 
           </View>  
           <TouchableOpacity style={styles.loginBtn } onPress={() => {
-          props.navigation.navigate("");}}>
+          props.navigation.navigate("Admin_home");}}>
           <Text style={styles.loginText}>DELETE</Text> 
           </TouchableOpacity> 
      

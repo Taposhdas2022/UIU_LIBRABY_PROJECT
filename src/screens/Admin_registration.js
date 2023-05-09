@@ -13,8 +13,15 @@ import { Header } from "react-native-elements";
 
 
 const Admin_registration =(props) =>{
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const[ fdata, setFdata] = useState({
+    name:'',
+    phoneNumber:'',
+    email:'',
+    password:'',
+    conPassword:'',
+  
+  })
+  const [errormsg,setErrormsg] = useState(null);
   return (
     <View style={styles.container}>
                 <Text style={{ fontSize: 50 , color : "#FFA500"}}>Admin</Text>
@@ -27,15 +34,7 @@ const Admin_registration =(props) =>{
           style={styles.TextInput}
           placeholder="Enter Your Name"
           placeholderTextColor="#003f5c"
-          onChangeText={(email) => setEmail(email)}
-        /> 
-      </View> 
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="student ID "
-          placeholderTextColor="#003f5c"
-          onChangeText={(email) => setEmail(email)}
+          onChangeText={(text) => setFdata ({ ...fdata, name: text})}
         /> 
       </View> 
       <View style={styles.inputView}>
@@ -43,7 +42,7 @@ const Admin_registration =(props) =>{
           style={styles.TextInput}
           placeholder="Enter Email "
           placeholderTextColor="#003f5c"
-          onChangeText={(email) => setEmail(email)}
+          onChangeText={(text) => setFdata ({ ...fdata, email: text})}
         /> 
       
       </View> 
@@ -52,7 +51,7 @@ const Admin_registration =(props) =>{
           style={styles.TextInput}
           placeholder="Phone Number "
           placeholderTextColor="#003f5c"
-          onChangeText={(email) => setEmail(email)}
+          onChangeText={(text) => setFdata ({ ...fdata, phoneNumber: text})}
         /> 
       </View> 
 
@@ -63,23 +62,49 @@ const Admin_registration =(props) =>{
           placeholder="Enter Password"
           placeholderTextColor="#003f5c"
           secureTextEntry={true}
-          onChangeText={(password) => setPassword(password)}
+          onChangeText={(text) => setFdata ({ ...fdata, password: text})}
         /> 
       </View> 
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Confirm Password"
+          placeholder="Confirm password"
           placeholderTextColor="#003f5c"
           secureTextEntry={true}
-          onChangeText={(password) => setPassword(password)}
+          onChangeText={(text) => setFdata ({ ...fdata, conPassword: text})}
         /> 
       </View> 
 
       <TouchableOpacity style={styles.loginBtn} onPress={() => {
-            props.navigation.navigate("Admin_login");}}>
+            props.navigation.navigate("Home");
+            if(fdata.name == '' || fdata.id == '' || fdata.email == '' ||
+            fdata.phoneNumber == '' || fdata.password == '' || fdata.conPassword == ''
+            ){
+              setErrormsg("All fields are required");
+              return;
+            }else{
+              if(fdata.password != fdata.conPassword){
+                setErrormsg('Password does not same');
+                return;
+              }
+              else{
+                fetch('http://103.67.157.119/32/signup',{
+                  method:'POST',
+                  headers: {
+                    'Content-Type':'application/json'
+                  },
+                  body: JSON.stringify(fdata)
+                })
+                  .then(res => res.json()).then(
+                    data => {
+                      console.log(data);
+                    }
+                  )
+              }
+            }
+            }}>
         <Text style={styles.loginText}>Registration</Text> 
-      </TouchableOpacity> 
+      </TouchableOpacity>
     </View> 
   );
 }

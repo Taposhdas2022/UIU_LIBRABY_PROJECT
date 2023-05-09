@@ -10,9 +10,19 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Header } from "react-native-elements";
+
 const Registration =(props) =>{
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
+  const[ fdata, setFdata] = useState({
+    name:'',
+    id:'',
+    phoneNumber:'',
+    email:'',
+    password:'',
+    conPassword:'',
+  
+  })
+  const [errormsg,setErrormsg] = useState(null);
   return (
     <View style={styles.container}>
                 <Text style={{ fontSize: 50 , color : "#FFA500"}}>Student</Text>
@@ -25,7 +35,8 @@ const Registration =(props) =>{
           style={styles.TextInput}
           placeholder="Enter Your Name"
           placeholderTextColor="#003f5c"
-          onChangeText={(email) => setEmail(email)}
+          textAlign="center"
+          onChangeText={(text) => setFdata ({ ...fdata, name: text})}
         /> 
       </View> 
       <View style={styles.inputView}>
@@ -33,7 +44,8 @@ const Registration =(props) =>{
           style={styles.TextInput}
           placeholder="student ID "
           placeholderTextColor="#003f5c"
-          onChangeText={(email) => setEmail(email)}
+          textAlign="center"
+          onChangeText={(text) => setFdata ({ ...fdata, id: text})}
         /> 
       </View> 
       <View style={styles.inputView}>
@@ -41,7 +53,8 @@ const Registration =(props) =>{
           style={styles.TextInput}
           placeholder="Enter Email "
           placeholderTextColor="#003f5c"
-          onChangeText={(email) => setEmail(email)}
+          textAlign="center"
+          onChangeText={(text) => setFdata ({ ...fdata, email: text})}
         /> 
       
       </View> 
@@ -50,7 +63,8 @@ const Registration =(props) =>{
           style={styles.TextInput}
           placeholder="Phone Number "
           placeholderTextColor="#003f5c"
-          onChangeText={(email) => setEmail(email)}
+          textAlign="center"
+          onChangeText={(text) => setFdata ({ ...fdata, phoneNumber: text})}
         /> 
       </View> 
 
@@ -60,8 +74,10 @@ const Registration =(props) =>{
           style={styles.TextInput}
           placeholder="Enter Password"
           placeholderTextColor="#003f5c"
+          textAlign="center"
           secureTextEntry={true}
-          onChangeText={(password) => setPassword(password)}
+          
+          onChangeText={(text) => setFdata ({ ...fdata, password: text})}
         /> 
       </View> 
       <View style={styles.inputView}>
@@ -69,15 +85,42 @@ const Registration =(props) =>{
           style={styles.TextInput}
           placeholder="Confirm Password"
           placeholderTextColor="#003f5c"
+          textAlign="center"
           secureTextEntry={true}
-          onChangeText={(password) => setPassword(password)}
+          onChangeText={(text) => setFdata ({ ...fdata, conPassword: text})}
         /> 
-      </View> 
-
+      </View>
+      
       <TouchableOpacity style={styles.loginBtn} onPress={() => {
-            props.navigation.navigate("Home");}}>
+            props.navigation.navigate("Home");
+            if(fdata.name == '' || fdata.id == '' || fdata.email == '' ||
+            fdata.phoneNumber == '' || fdata.password == '' || fdata.conPassword == ''
+            ){
+              setErrormsg("All fields are required");
+              return;
+            }else{
+              if(fdata.password != fdata.conPassword){
+                setErrormsg('Password does not same');
+                return;
+              }
+              else{
+                fetch('http://0.0.0.0/0/signup',{
+                  method:'POST',
+                  headers: {
+                    'Content-Type':'application/json'
+                  },
+                  body: JSON.stringify(fdata)
+                })
+                  .then(res => res.json()).then(
+                    data => {
+                      console.log(data);
+                    }
+                  )
+              }
+            }
+            }}>
         <Text style={styles.loginText}>Registration</Text> 
-      </TouchableOpacity> 
+      </TouchableOpacity>
     </View> 
   );
 }
@@ -122,5 +165,13 @@ const styles = StyleSheet.create({
       marginTop: 40,
       backgroundColor: "#FFA500",
     },
+    errormessage:{
+      color:'white',
+      fontSize:15,
+      textAlign:'center',
+      backgroundColor:'aqua',
+      padding:5,
+      borderRadius: 10,
+    }
   });
 export default Registration;
