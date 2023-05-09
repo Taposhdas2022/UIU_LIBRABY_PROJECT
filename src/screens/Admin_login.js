@@ -17,9 +17,12 @@ import {
 const Admin_login =(props) =>{
 
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    
+  const [fdata, setFdata] = useState({
+    email: '',
+    password: ''
+})
+
+const [errormsg, setErrormsg] = useState(null);
     return (
         <View style={styles.container}>
           <StatusBar style="auto" />
@@ -42,7 +45,7 @@ const Admin_login =(props) =>{
               style={styles.TextInput}
               placeholder="Username/Email"
               placeholderTextColor="#003f5c"
-              onChangeText={(email) => setEmail(email)}
+              onChangeText={(text) => setFdata ({ ...fdata, email: text})}
             /> 
           </View> 
 
@@ -53,7 +56,7 @@ const Admin_login =(props) =>{
               placeholder="EnterPassword"
               placeholderTextColor="#003f5c"
               secureTextEntry={true}
-              onChangeText={(password) => setPassword(password)}
+              onChangeText={(text) => setFdata ({ ...fdata, password: text})}
             /> 
           </View> 
 
@@ -71,7 +74,33 @@ const Admin_login =(props) =>{
           <View>
             <TouchableOpacity>
             <Text style={styles.forgot_button} onPress={() => {
-            props.navigation.navigate("Admin_registration");}}
+            props.navigation.navigate("Admin_registration");
+            if (fdata.email == '' || fdata.password == '') {
+              setErrormsg('All fields are required');
+              return;
+          }
+          else {
+              fetch('http://103.67.157.119/32/LogIn', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(fdata)
+              })
+                  .then(res => res.json()).then(
+                      data => {
+                          // console.log(data);
+                          if (data.error) {
+                              setErrormsg(data.error);
+                          }
+                          else {
+                              alert('logged successfully');
+                              navigation.navigate('homepage');
+                          }
+                      }
+                  )
+          }
+          }}
             >Create An Account</Text> 
           </TouchableOpacity>
 
