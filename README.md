@@ -1,12 +1,12 @@
 
 # UIU Library Management System
 
-In this project librarian or admin can add book, delete book, and check library resigtered student from library database easily.
+In this project admin can add book, delete book, and check library resigtered student from library database easily.
 And student can check book list, search book, boorrow book list from user database.
 
 ## Acknowledgements
 
-We learn code from variours youtube channel and our classroom. Our learing video link is given below.
+We learn code from our honorable faculty Md. Ashiqur Rahman Sir, and variours youtube channel. Our learing video link is given below.
  - [Youtube link for frontend full series link](https://www.youtube.com/watch?v=JkBIxn-EC94&list=PLkyGuIcLcmx2ravUUjMeSVqjMaY7glCQU)
  - [Youtube link for backend Video-1](https://www.youtube.com/live/EqxfKPBUTeQ?feature=share)
   - [Youtube link for backend Video-2](https://www.youtube.com/live/F5Eid-0mZOU?feature=share)
@@ -21,6 +21,7 @@ Install my-project with npm
   npm install
   npm start
 ```
+Install backend witn npm
 ```PS for backend
    npm i bcrypt body-parser dotenv express jsonwebtoken mongoose nodemon
    nodemon index
@@ -30,7 +31,6 @@ Install my-project with npm
 
 This project is used by the following:
 
-- Librarians
 - Admins
 - Students
 
@@ -41,3 +41,7 @@ This project is used by the following:
 
 - Backend was developed by Fatin Ishtiak. And connection was also developed by Fatin Ishtiak.
 
+
+## Logo
+
+ [![UIU Logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDVxbkoWapmErlC_N2H3_SgmAFNthVaTlNx_gKnDpkxA&s)](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDVxbkoWapmErlC_N2H3_SgmAFNthVaTlNx_gKnDpkxA&s)
